@@ -68,11 +68,11 @@ ggplot(df, aes(x = pseudotime, y = AUC)) +
   scale_color_manual(values = cell_colors) +
   theme_minimal(base_size = 14) +
   theme(
-    panel.border = element_rect(color = "black", fill = NA, size = 1),  # 添加方框
-    panel.background = element_blank(),  # 确保背景干净
+    panel.border = element_rect(color = "black", fill = NA, size = 1), 
+    panel.background = element_blank(),  
     plot.background = element_blank(),
-    axis.ticks = element_line(color = "black", size = 0.5),  # 刻度线
-    axis.ticks.length = unit(0.2, "cm"),  # 刻度线长度
+    axis.ticks = element_line(color = "black", size = 0.5), 
+    axis.ticks.length = unit(0.2, "cm"),
   ) +labs(
     title = "179 Gene Score",
     x = "Pseudotime",
