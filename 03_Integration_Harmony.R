@@ -1,9 +1,10 @@
 # Some required R packages
 library(Seurat)
+library(dplyr)
 
-# Step1 : Load seurat object 
- seurat.list  <- readRDS("seurat.list.rds")
- seurat_final <- merge(seurat.list[[1]], seurat.list[-1])
+# Step1 : Load the Seurat object list after quality control and doublet removal 
+seurat.list  <- readRDS("seurat.list.rds")
+seurat_final <- merge(seurat.list[[1]], seurat.list[-1])
 
 # Step2 : Perform standard preprocessing (log-normalization, identify variable features, scale and PCA)
 seurat_final <- seurat_final %>% 
