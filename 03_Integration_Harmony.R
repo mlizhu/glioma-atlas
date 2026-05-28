@@ -2,19 +2,20 @@
 library(Seurat)
 
 # Step1 : Load seurat object 
-seurat.combined <- readRDS("Glioma.Seurat.rds")
+ seurat.list  <- readRDS("seurat.list.rds")
+ seurat_final <- merge(seurat.list[[1]], seurat.list[-1])
 
 # Step2 : Perform standard preprocessing (log-normalization, identify variable features, scale and PCA)
-seurat.combined <- seurat.combined %>% 
+seurat_final <- seurat_final %>% 
   NormalizeData() %>% 
-  FindVariableFeatures(nFeatures = 3000) %>% 
+  FindVariableFeatures(nfeatures = 2000) %>% 
   ScaleData(verbose = TRUE) %>% 
   RunPCA(npcs = 20, verbose = FALSE, seed.use = 111) %>% 
   RunUMAP(reduction = "pca", dims = 1:20, seed.use = 111)
 
 ## Step3 : Dimensional reduction and clustering
 seurat.combined <- IntegrateLayers(
-  object = seurat.combined,
+  object = seurat_final,
   method = HarmonyIntegration,
   orig.reduction = "pca",
   new.reduction = "harmony",
