@@ -1,0 +1,34 @@
+File manifest
+
+This file lists the main input files and processed objects required for reproducing the downstream analyses.
+
+1. Glioma.rds
+
+Description: Annotated major-cell-type Seurat object containing all glioma cells.
+Used for: Gene-set mapping, AUCell scoring, UMAP visualization, and CellChat analysis.
+
+2. Pericyte.rds
+Description: Refined pericyte Seurat object used for pericyte-focused subclustering and downstream analyses.
+Used for: Pericyte subcluster analysis, Ro/e analysis, BayesPrism deconvolution, survival analysis, AUCell scoring, and Monocle2 pseudotime analysis.
+
+3. Myeloid.rds
+Description: Refined myeloid Seurat object used for myeloid subclustering and downstream analyses.
+Used for: Myeloid subcluster analysis, Ro/e analysis, BayesPrism deconvolution, survival analysis, AUCell scoring, and Monocle2 pseudotime analysis.
+
+4. T_cell.rds
+Description: Refined Lymphoid lineage Seurat object used for Lymphoid subclustering and downstream analyses.
+Used for: Lymphoid lineage lineage cell analysis, Ro/e analysis, BayesPrism deconvolution, survival analysis, AUCell scoring, and Monocle2 pseudotime analysis.
+
+5. signature.xlsx
+Description: Gene-signature file containing the 179-gene, 68-gene, 30-gene, and 83-gene signatures.
+Used for: Gene-set mapping, AUCell scoring, CellChat ligand-receptor filtering, and spatial transcriptomic scoring.
+
+6. TCGAGBMLGG全数据.xlsx
+Description: Processed TCGA GBM/LGG bulk RNA-seq matrix with survival information.
+Used for: BayesPrism deconvolution and survival analysis.
+
+7. Spatial transcriptomic objects
+Description: Spatial transcriptomic data used for scoring the 179-gene, 68-gene, 30-gene, and 83-gene signatures.
+Used for: Spatial transcriptomic gene-signature scoring.
+
+Additional intermediate and output files generated or used by the scripts include CellChat objects, CellChat ligand-receptor interaction tables, Monocle2 CDS objects, BayesPrism-inferred fraction tables, survival plots, and sessionInfo.txt.
