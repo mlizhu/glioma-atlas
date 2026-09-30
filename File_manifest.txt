@@ -1,0 +1,23 @@
+File manifest
+
+This file lists the main input files and processed objects required for reproducing the downstream analyses.
+
+1. Glioma.rds
+
+Description: Annotated major-cell-type Seurat object containing all glioma cells.
+Used for: Gene-set mapping, AUCell scoring, UMAP visualization, and CellChat analysis.
+
+2. Pericyte.rds
+Description: Refined pericyte Seurat object used for pericyte-focused subclustering and downstream analyses.
+Used for: Pericyte subcluster analysis, Ro/e analysis, BayesPrism deconvolution, survival analysis, AUCell scoring, and Monocle2 pseudotime analysis.
+
+3. signature.xlsx
+Description: Gene-signature file containing the 179-gene, 68-gene, 30-gene, and 83-gene signatures.
+Used for: Gene-set mapping, AUCell scoring, CellChat ligand-receptor filtering, and spatial transcriptomic scoring.
+
+4. TCGAGBMLGG全数据.xlsx
+Description: Processed TCGA GBM/LGG bulk RNA-seq matrix with survival information.
+Used for: BayesPrism deconvolution and survival analysis.
+
+
+Additional intermediate and output files generated or used by the scripts include CellChat objects, CellChat ligand-receptor interaction tables, Monocle2 CDS objects, BayesPrism-inferred fraction tables, survival plots, and sessionInfo.txt.
